@@ -15,6 +15,15 @@ struct AppModel: Decodable,Identifiable {
     let price: Double
     let releaseDate: Date
     let resultCount: Int
-    let results: [AppModel]
+    let result: [AppModel]
+}
+
+enum AppError: Error {
+    case invalidURL
+    case networkError
+    case invalidResponse
+    case httpError(statusCode: Int)
+    case jsonDecodingError
+    case noData
 }
 
