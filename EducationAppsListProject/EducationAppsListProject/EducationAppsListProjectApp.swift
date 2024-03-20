@@ -11,7 +11,8 @@ import SwiftUI
 struct EducationAppsListProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+            TabBarView()
         }
     }
 }
