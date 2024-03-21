@@ -6,8 +6,11 @@
 //
 import Foundation
 
-class AppFetcher {
+class AppFetcher: ObservableObject {
+    @Published var appData: [Results] = []
     static let shared = AppFetcher()
+
+    
 
     func fetchApps(appIDs: [String], completion: @escaping ([Results]?) -> Void) {
         // Create a comma-separated string of app IDs

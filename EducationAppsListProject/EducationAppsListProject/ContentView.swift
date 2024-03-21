@@ -11,24 +11,29 @@ import SwiftUI
 struct ContentView: View {
     @State private var results: [Results] = []
     @State private var isLoading = false
+    @ObservedObject var appFetcher = AppFetcher.shared
 
     var body: some View {
-        NavigationView {
-            VStack {
-                if isLoading {
-                    ProgressView()
-                } else if results.isEmpty {
-                    Text("No results found")
-                        .onAppear(perform: fetchApps)
-                } else {
-                    AppListView(results: results)
+        TabView {
+            NavigationView {
+                VStack {
+                    if isLoading {
+                        ProgressView()
+                    } else if results.isEmpty {
+                        Text("No results found")
+                            .onAppear(perform: fetchApps)
+                    } else {
+                        AppListView(results: results)
+                    }
                 }
-            }
 
-            .onAppear(perform: fetchApps)
+                .onAppear(perform: fetchApps)
+            }
+            .tabItem {
+                          Label("Apps", systemImage: "square.grid.2x2.fill")
+                      }
         }
     }
-
     func fetchApps() {
         isLoading = true
         // Pass an array of app IDs as individual strings

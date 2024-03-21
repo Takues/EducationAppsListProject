@@ -16,13 +16,28 @@ struct AppListView: View {
         return NavigationView {
             List(results, id: \.trackID) { result in
                 NavigationLink(destination: AppsDetailView(app: result)) {
-                    VStack(alignment: .leading) {
-                        Text(result.trackName)
-                            .font(.headline)
-                        Text(result.description)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                            .lineLimit(2)
+                    HStack {
+                        AsyncImage(
+                            url: URL(string: result.artworkUrl100),
+                            content: { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(10)
+                                    .frame(width: 50)
+                            },
+                            placeholder: {
+                                ProgressView()
+                            }
+                        )
+                        VStack(alignment: .leading) {
+                            Text(result.trackName)
+                                .font(.headline)
+                            Text(result.description)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                                .lineLimit(2)
+                        }
                     }
                 }
             }
@@ -34,7 +49,7 @@ struct AppListView: View {
 struct AppListView_Previews: PreviewProvider {
     static var previews: some View {
         let sampleResult = Results(isGameCenterEnabled: false, supportedDevices: [], advisories: [], features: [], screenshotUrls: [], appletvScreenshotUrls: [], ipadScreenshotUrls: [], artworkUrl60: "", artworkUrl512: "", artworkUrl100: "", artistViewURL: "", kind: .software, minimumOSVersion: "", releaseNotes: "", artistID: 0, artistName: "", genres: [], price: 0, description: "", genreIDS: [], trackID: 0, trackName: "", primaryGenreName: .education, primaryGenreID: 0, bundleID: "", currentVersionReleaseDate: .now, isVppDeviceBasedLicensingEnabled: false, sellerName: "", releaseDate: .now, currency: .usd, averageUserRatingForCurrentVersion: 0.0, averageUserRating: 0.0, trackCensoredName: "", languageCodesISO2A: [], fileSizeBytes: "", sellerURL: "", formattedPrice: .free, contentAdvisoryRating: .the4, userRatingCountForCurrentVersion: 0, trackViewURL: "", trackContentRating: .the12, version: "", wrapperType: .software, userRatingCount: 0)
-
+        return AppListView(results: [sampleResult])
 
     }
 }

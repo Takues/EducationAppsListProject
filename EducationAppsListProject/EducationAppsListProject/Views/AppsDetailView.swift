@@ -21,10 +21,9 @@ struct AppsDetailView: View {
                 AsyncImage(url: URL(string: app.artworkUrl100)) { image in
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 380, height: 200)
                 } placeholder: {
                     ProgressView()
-
                 }
 
                 .cornerRadius(15)
@@ -32,6 +31,8 @@ struct AppsDetailView: View {
                 // App Name
                 Text(app.trackName)
                     .font(.title)
+                    .fontWeight(.bold)
+
 
                 // App Description
                 Text(app.description)

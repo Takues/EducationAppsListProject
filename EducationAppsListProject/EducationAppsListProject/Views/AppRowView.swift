@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AppRowView: View {
-  
+
+    @ObservedObject var appfetcher = AppFetcher()
+
 
     var app: Results
 
@@ -35,14 +37,14 @@ struct AppRowView: View {
 
             }
            // Add some vertical padding to the VStack
+            // Add a divider between the VStack and the Image
 
-            Divider() // Add a divider between the VStack and the Image
-           
             Image("Desmos")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(10)
-                .frame(width: 150, height: 150)
+                .frame(width: 100, height: 100,alignment: .bottomLeading)
+
         }
         .padding() // Add horizontal padding to the entire HStack
     }
@@ -51,7 +53,7 @@ struct AppRowView: View {
 struct AppRowView_Previews: PreviewProvider {
     static var previews: some View {
         AppRowView(app: Results(isGameCenterEnabled: false, supportedDevices: [], advisories: [], features: [], screenshotUrls: [], appletvScreenshotUrls: [], ipadScreenshotUrls: [], artworkUrl60: "", artworkUrl512: "", artworkUrl100: "", artistViewURL: "", kind: .software, minimumOSVersion: "", releaseNotes: "", artistID: 0, artistName: "", genres: [], price: 0, description: "", genreIDS: [], trackID: 0, trackName: "App Name", primaryGenreName: .education, primaryGenreID: 0, bundleID: "", currentVersionReleaseDate: .now, isVppDeviceBasedLicensingEnabled: false, sellerName: "", releaseDate: .now, currency: .usd, averageUserRatingForCurrentVersion: 0.0, averageUserRating: 0.0, trackCensoredName: "", languageCodesISO2A: [], fileSizeBytes: "", sellerURL: "", formattedPrice: .free, contentAdvisoryRating: .the4, userRatingCountForCurrentVersion: 0, trackViewURL: "", trackContentRating: .the12, version: "", wrapperType: .software, userRatingCount: 0))
-            .frame(width: 380, height: 200)
+            .frame(width: 380, height: 130)
             .background(Color.white)
             .previewLayout(.sizeThatFits)
     }
