@@ -12,28 +12,39 @@ struct ContentView: View {
     @State private var results: [Results] = []
     @State private var isLoading = false
     @ObservedObject var appFetcher = AppFetcher.shared
+    @State private var searchText = ""
 
     var body: some View {
-        TabView {
-            NavigationView {
-                VStack {
-                    if isLoading {
-                        ProgressView()
-                    } else if results.isEmpty {
-                        Text("No results found")
-                            .onAppear(perform: fetchApps)
-                    } else {
-                        AppListView(results: results)
-                    }
-                }
+           TabView {
+               NavigationView {
+                   VStack {
 
-                .onAppear(perform: fetchApps)
-            }
-            .tabItem {
-                          Label("Apps", systemImage: "square.grid.2x2.fill")
-                      }
-        }
-    }
+                       if isLoading {
+                           ProgressView()
+                       } else if results.isEmpty {
+                           Text("No results found")
+                               .onAppear(perform: fetchApps)
+                       } else {
+                           AppListView(results: results.filter {
+                               searchText.isEmpty || $0.trackName.localizedCaseInsensitiveContains(searchText)
+                           })
+                       }
+                   }
+                 
+                   .onAppear(perform: fetchApps)
+               }
+               .tabItem {
+                   Label("Apps", systemImage: "square.grid.2x2.fill")
+               }
+
+               // Second Tab
+               Text("Second Tab Content")
+                   .tabItem {
+                       Label("Second Tab", systemImage: "apple.terminal.on.rectangle")
+                   }
+           }
+       }
+
     func fetchApps() {
         isLoading = true
         // Pass an array of app IDs as individual strings
@@ -41,6 +52,7 @@ struct ContentView: View {
         AppFetcher.shared.fetchApps(appIDs: appIDs) { fetchedResults in
             DispatchQueue.main.async {
                 isLoading = false
+
                 if let fetchedResults = fetchedResults {
                     self.results = fetchedResults
                     print("Fetched \(fetchedResults.count) results")

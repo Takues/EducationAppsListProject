@@ -30,6 +30,7 @@ struct AppListView: View {
                                 ProgressView()
                             }
                         )
+
                         VStack(alignment: .leading) {
                             Text(result.trackName)
                                 .font(.headline)

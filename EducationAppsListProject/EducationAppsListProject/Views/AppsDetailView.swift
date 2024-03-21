@@ -28,16 +28,25 @@ struct AppsDetailView: View {
 
                 .cornerRadius(15)
 
-                // App Name
-                Text(app.trackName)
-                    .font(.title)
-                    .fontWeight(.bold)
+                // Rating
+                HStack {
+                    Text("Rating Here!")
+                        .font(.subheadline)
+                }
 
+                // App Name
+                HStack {
+                    
+                    Text(app.trackName)
+                        .font(.title)
+                        .fontWeight(.bold)
+                }
 
                 // App Description
-                Text(app.description)
-                    .font(.body)
-
+                HStack {
+                    Text(app.description)
+                        .font(.body)
+                }
 
                 // Release Notes
                 if let releaseNotes = app.releaseNotes {
