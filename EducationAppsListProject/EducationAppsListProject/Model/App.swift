@@ -52,7 +52,7 @@ struct Results: Codable {
     let trackContentRating: Rating
     let version: String
     let wrapperType: Kind
-    let userRatingCount: Int
+    let userRatingCount: Double
 
     enum CodingKeys: String, CodingKey {
         case isGameCenterEnabled, supportedDevices, advisories, features, screenshotUrls, appletvScreenshotUrls, ipadScreenshotUrls, artworkUrl60, artworkUrl512, artworkUrl100

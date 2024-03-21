@@ -13,6 +13,8 @@ struct ContentView: View {
     @State private var isLoading = false
     @ObservedObject var appFetcher = AppFetcher.shared
     @State private var searchText = ""
+    @State private var selectedRating = 0
+    @State private var loadingPercentages: [CGFloat] = [60, 25, 10, 3, 2]
 
     var body: some View {
            TabView {

@@ -14,6 +14,8 @@
 		71258F882BA99D0000350182 /* EduAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71258F872BA99D0000350182 /* EduAppsView.swift */; };
 		71258F8A2BA9C98500350182 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71258F892BA9C98500350182 /* App.swift */; };
 		7163D8002BAAC810001F30F5 /* AppsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7163D7FF2BAAC810001F30F5 /* AppsDetailView.swift */; };
+		719B6F5F2BAC5C4300B58271 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B6F5E2BAC5C4300B58271 /* LaunchScreen.swift */; };
+		719B6F622BAC6AD500B58271 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719B6F612BAC6AD500B58271 /* ProgressBar.swift */; };
 		71C1E3622BA986B90019D034 /* EducationAppsListProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1E3612BA986B90019D034 /* EducationAppsListProjectApp.swift */; };
 		71C1E3642BA986B90019D034 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1E3632BA986B90019D034 /* ContentView.swift */; };
 		71C1E3662BA986BD0019D034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C1E3652BA986BD0019D034 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		71258F872BA99D0000350182 /* EduAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EduAppsView.swift; sourceTree = "<group>"; };
 		71258F892BA9C98500350182 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		7163D7FF2BAAC810001F30F5 /* AppsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsDetailView.swift; sourceTree = "<group>"; };
+		719B6F5E2BAC5C4300B58271 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		719B6F612BAC6AD500B58271 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		71C1E35E2BA986B90019D034 /* EducationAppsListProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EducationAppsListProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C1E3612BA986B90019D034 /* EducationAppsListProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationAppsListProjectApp.swift; sourceTree = "<group>"; };
 		71C1E3632BA986B90019D034 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,22 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		719B6F5D2BAC5C3000B58271 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				719B6F5E2BAC5C4300B58271 /* LaunchScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		719B6F602BAC6ABF00B58271 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				719B6F612BAC6AD500B58271 /* ProgressBar.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
 		71C1E3552BA986B90019D034 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +114,8 @@
 		71C1E3602BA986B90019D034 /* EducationAppsListProject */ = {
 			isa = PBXGroup;
 			children = (
+				719B6F602BAC6ABF00B58271 /* Rating */,
+				719B6F5D2BAC5C3000B58271 /* Screens */,
 				71258F7F2BA99A1B00350182 /* Views */,
 				71258F7A2BA9999400350182 /* Model */,
 				71C1E3612BA986B90019D034 /* EducationAppsListProjectApp.swift */,
@@ -183,7 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				71258F8A2BA9C98500350182 /* App.swift in Sources */,
+				719B6F622BAC6AD500B58271 /* ProgressBar.swift in Sources */,
 				71C1E3642BA986B90019D034 /* ContentView.swift in Sources */,
+				719B6F5F2BAC5C4300B58271 /* LaunchScreen.swift in Sources */,
 				7163D8002BAAC810001F30F5 /* AppsDetailView.swift in Sources */,
 				71258F882BA99D0000350182 /* EduAppsView.swift in Sources */,
 				71C1E3622BA986B90019D034 /* EducationAppsListProjectApp.swift in Sources */,
